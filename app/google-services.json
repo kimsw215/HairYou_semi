@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "955797350338",
+    "project_id": "hairyousemi",
+    "storage_bucket": "hairyousemi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:955797350338:android:6af480fd9ebd7bbcc1185b",
+        "android_client_info": {
+          "package_name": "kr.ac.kpu.ce2019152012.hairyou_semi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "955797350338-0igh2cm56skc66cfqq8tbb2dmmn5apht.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.ac.kpu.ce2019152012.hairyou_semi",
+            "certificate_hash": "60c1eb23f0df7976a28c84f241cfcbefb3f50096"
+          }
+        },
+        {
+          "client_id": "955797350338-73fcjh4d3e4ksao52fdhbnci4aa08rt3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpVO2gQMp_QtwyV9PyGheWZdvn3ll_QVQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "955797350338-73fcjh4d3e4ksao52fdhbnci4aa08rt3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
