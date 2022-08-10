@@ -68,6 +68,12 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
 
+    implementation("com.google.android.gms:play-services-location:20.0.0")
+
+    // 네이버 지도 SDK       
+    implementation 'com.naver.maps:map-sdk:3.3.0'
+
+
     // 지도 api
     implementation 'com.google.maps:google-maps-services:2.0.0'
     implementation 'com.google.android.gms:play-services-location:20.0.0'

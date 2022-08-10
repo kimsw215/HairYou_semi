@@ -2,10 +2,13 @@ package kr.ac.kpu.ce2019152012.hairyou_semi.user.fragment
 
 
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -21,32 +24,9 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
-    var place_name: String = "@@@@@@@@@@@@@"             // 장소명, 업체명
-    lateinit var address_name: String           // 전체 지번 주소
-    lateinit var road_address_name: String      // 전체 도로명 주소
-    lateinit var x: String                      // X 좌표값 혹은 longitude
-    lateinit var y: String                      // Y 좌표값 혹은 latitude
+    var permissions = arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION,
+        android.Manifest.permission.ACCESS_COARSE_LOCATION)
 
-
-    // ResearchAdapter 변수 선언
-//    private lateinit var listAdapter: SearchAdapter
-//    private lateinit var listAdapter : HomeAdapter
-
-    // linearManager
-    private lateinit var Lmanager: LinearLayoutManager
-
-    // gridManager
-    private lateinit var Gmanager: GridLayoutManager
-
-    // 검색 정보 변수 선언
-//    private lateinit var datas : ArrayList<SearchDataVo>
-
-//    val datas = mutableListOf<HomeShopDataVo>()
-
-    private lateinit var navController: NavController
-
-    // 뷰가 생성되었을 때
-    // 프래그먼트와 레이아웃을 연결시켜주는 부분
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -55,6 +35,11 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
 
+        if (isPermitted()) {
+            startProcess()
+        } else {
+//            ActivityCompat.requestPermissions(requireActivity(), permissions, permission_request)
+        }//권한 확인
         return view
     }
 
@@ -62,6 +47,24 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     }
+
+    fun isPermitted(): Boolean {
+        for (perm in permissions) {
+            if (ContextCompat.checkSelfPermission(requireActivity(), perm) != PackageManager.PERMISSION_GRANTED) {
+                return false
+            }
+        }
+        return true
+    }//권한을 허락 받아야함
+
+    fun startProcess(){
+       /* val fm = supportFragmentManager
+        val mapFragment = fm.findFragmentById(R.id.map) as MapFragment?
+            ?: MapFragment.newInstance().also {
+                fm.beginTransaction().add(R.id.map, it).commit()
+            } //권한
+        mapFragment.getMapAsync(this)*/
+    } //권한이 있다면 onMapReady연결
 
 
     override fun onDestroyView() {

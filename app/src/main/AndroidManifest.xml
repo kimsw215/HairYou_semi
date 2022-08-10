@@ -4,6 +4,11 @@
     package="kr.ac.kpu.ce2019152012.hairyou_semi">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 위치정보 사용을 위해 권한을 추가-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <meta-data android:name="com.naver.maps.map.CLIENT_ID" android:value="CLIENT_ID" />
 
     <application
         android:allowBackup="true"
