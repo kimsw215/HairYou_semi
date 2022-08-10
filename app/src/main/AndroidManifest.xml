@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="kr.ac.kpu.ce2019152012.hairyou_semi">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,14 +15,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HairYou_semi"
         tools:targetApi="31">
-        <activity
-            android:name=".MainActivity"
+
+        <activity android:name=".Splash_Activity"
+            android:exported="true"/>
+
+        <activity android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity android:name=".JoinCustomerActivity"
+            android:exported="true"/>
+        <activity android:name=".JoinSelectActivity"
+            android:exported="true"/>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
         </activity>
     </application>
 
