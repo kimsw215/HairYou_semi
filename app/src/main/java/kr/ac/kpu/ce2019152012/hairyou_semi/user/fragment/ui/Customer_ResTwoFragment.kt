@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import kr.ac.kpu.ce2019152012.hair_you.databinding.FragmentCustomerReser2Binding
+import kr.ac.kpu.ce2019152012.hairyou_semi.databinding.FragmentCustomerReser2Binding
 
 class Customer_ResTwoFragment : Fragment() {
     private var _binding: FragmentCustomerReser2Binding?= null

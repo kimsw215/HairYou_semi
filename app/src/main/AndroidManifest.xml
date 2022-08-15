@@ -8,7 +8,6 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-    <meta-data android:name="com.naver.maps.map.CLIENT_ID" android:value="CLIENT_ID" />
 
     <application
         android:allowBackup="true"
@@ -18,8 +17,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.HairYou_semi"
+        android:theme="@style/Theme.HairYou_semi_nobar"
         tools:targetApi="31">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_map_key" />
         <activity
             android:name=".user.MessageActivity"
             android:exported="false" />
@@ -30,11 +32,6 @@
         <activity
             android:name=".LoginActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".JoinCustomerActivity"
@@ -42,9 +39,22 @@
         <activity
             android:name=".JoinSelectActivity"
             android:exported="true" />
+
+        <activity
+            android:name=".user.CustomerContainerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="true" >
+        </activity>
     </application>
 
 </manifest>
