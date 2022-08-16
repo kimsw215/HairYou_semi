@@ -24,7 +24,7 @@
             android:value="@string/google_map_key" />
         <activity
             android:name=".user.MessageActivity"
-            android:exported="false" />
+            android:exported="true" />
 
         <activity
             android:name=".Splash_Activity"
@@ -32,6 +32,11 @@
         <activity
             android:name=".LoginActivity"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".JoinCustomerActivity"
@@ -43,11 +48,6 @@
         <activity
             android:name=".user.CustomerContainerActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
 

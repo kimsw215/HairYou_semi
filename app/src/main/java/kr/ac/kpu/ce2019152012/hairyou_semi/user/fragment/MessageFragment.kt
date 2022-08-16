@@ -30,13 +30,13 @@ import kr.ac.kpu.ce2019152012.hairyou_semi.user.model.Friend
 import java.util.*
 
 class MessageFragment : Fragment() {
-    companion object {
+/*    companion object {
         fun newInstance(): MessageFragment {
             return MessageFragment()
         }
     }
 
-    private val fireDatabase = FirebaseDatabase.getInstance().reference
+    private val fireDatabase = FirebaseDatabase.getInstance().reference*/
 
     //프래그먼트가 메모리에 올라갔을때
     private var _binding: FragmentMessageBinding? = null
@@ -46,11 +46,6 @@ class MessageFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-    }
-
-    // 프래그먼트를 포함하고 있는 액티비티에 붙었을 때
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
     }
 
     // 뷰가 생성되었을 때
@@ -64,14 +59,16 @@ class MessageFragment : Fragment() {
         _binding = FragmentMessageBinding.inflate(inflater, container, false)
         val view = binding.root
 
+/*
         val recyclerView = view.findViewById<RecyclerView>(R.id.chatfragment_recyclerview)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = RecyclerViewAdapter()
+*/
 
         return view
     }
 
-    inner class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.CustomViewHolder>() {
+   /* inner class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.CustomViewHolder>() {
 
         private val chatModel = ArrayList<ChatModel>()
         private var uid: String? = null
@@ -152,7 +149,7 @@ class MessageFragment : Fragment() {
         override fun getItemCount(): Int {
             return chatModel.size
         }
-    }
+    }*/
 
 
     // 코딩

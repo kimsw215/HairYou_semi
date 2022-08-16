@@ -19,18 +19,12 @@ class JoinCustomerActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityJoinCustomerBinding
 
-    private lateinit var auth: FirebaseAuth
+    private var auth: FirebaseAuth? = null
     private lateinit var db : FirebaseFirestore
-
-    private var user = Firebase.auth.currentUser
-    private var uid = user?.uid.toString()
-
-    private val itemsCollectionRef = db.collection("Customer")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        FirebaseApp.initializeApp(this)
         binding = ActivityJoinCustomerBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -47,8 +41,6 @@ class JoinCustomerActivity : AppCompatActivity() {
         binding.joinInBtn.setOnClickListener {
             val gender = if (binding.joinSelectMan.isSelected()) "male" else "female"
 
-            //customer.saveCustomer().enqueue(Callback)
-
             val email = binding.joinIdEdit.text.toString().trim()
             val password = binding.joinPwEdit.text.toString().trim()
 
@@ -57,11 +49,10 @@ class JoinCustomerActivity : AppCompatActivity() {
                 "id" to binding.joinIdEdit.text.toString().trim(),
                 "passwd" to binding.joinPwEdit.text.toString().trim(),
                 "name" to binding.joinNameEdit.text.toString().trim(),
-                "phone" to binding.joinPhoneEdit.text.toString().trim(),
-                "uid" to uid
+                "phone" to binding.joinPhoneEdit.text.toString().trim()
             )
 
-            db.collection("Customer").document(uid)
+            db.collection("Customer").document(email)
                 .set(userInformation, SetOptions.merge())
                 .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully written!") }
                 .addOnFailureListener { e -> Log.w(TAG, "Error writing document", e) }
@@ -76,12 +67,13 @@ class JoinCustomerActivity : AppCompatActivity() {
     }
 
     private fun createUser(email: String, password: String) {
-        auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
+        auth?.createUserWithEmailAndPassword(email, password)
+            ?.addOnCompleteListener { task ->
             // 이메일 형식 체크
             if (android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                 if (task.isSuccessful) {
                     Toast.makeText(this, "회원가입 성공", Toast.LENGTH_SHORT).show()
-                    val user = auth.currentUser
+                    val user = auth?.currentUser
                     updateUI(user)
                 } else {
                     Toast.makeText(this, "회원가입 실패", Toast.LENGTH_SHORT).show()

@@ -34,7 +34,7 @@ import kr.ac.kpu.ce2019152012.hairyou_semi.databinding.FragmentMypageBinding
 import kr.ac.kpu.ce2019152012.hairyou_semi.user.model.Friend
 
 class MypageFragment : Fragment(){
-    companion object{
+/*    companion object{
         private var imageUri : Uri? = null
         private val fireStorage = FirebaseStorage.getInstance().reference
         private val fireDatabase = FirebaseDatabase.getInstance().reference
@@ -43,8 +43,7 @@ class MypageFragment : Fragment(){
         fun newInstance() : MypageFragment {
             return MypageFragment()
         }
-    }
-
+    }*/
 
     //프래그먼트가 메모리에 올라갔을때
     private var _binding: FragmentMypageBinding? = null
@@ -57,7 +56,7 @@ class MypageFragment : Fragment(){
     ): View? {
         _binding = FragmentMypageBinding.inflate(inflater,container,false)
         val view = binding.root
-
+/*
         binding.customerMypageName.text = "이름: ${"name"}"
         binding.customerMypagePhone.text = "전화번호: ${"phone"}"
 
@@ -96,17 +95,9 @@ class MypageFragment : Fragment(){
                 name.clearFocus()
                 Toast.makeText(requireContext(), "이름이 변경되었습니다.", Toast.LENGTH_SHORT).show()
             }
-        }
+        }*/
 
         return view
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
-    override fun onAttach(activity: Activity) {
-        super.onAttach(activity)
     }
 
     /*
