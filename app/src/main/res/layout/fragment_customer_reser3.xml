@@ -67,19 +67,21 @@
 
         <ImageView
             android:id="@+id/perm"
-            android:layout_width="80dp"
-            android:layout_height="100dp"
+            android:layout_width="86dp"
+            android:layout_height="115dp"
             android:layout_marginEnd="44dp"
             android:src="@drawable/perm"
+            android:background="@drawable/reser_background_stroke"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/cut"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/color"
-            android:layout_width="80dp"
-            android:layout_height="100dp"
+            android:layout_width="86dp"
+            android:layout_height="115dp"
             android:src="@drawable/color"
+            android:background="@drawable/reser_background_stroke"
             app:layout_constraintBottom_toBottomOf="@+id/perm"
             app:layout_constraintEnd_toStartOf="@+id/perm"
             app:layout_constraintHorizontal_bias="0.415"
@@ -88,25 +90,25 @@
 
         <ImageView
             android:id="@+id/cut"
-            android:layout_width="80dp"
-            android:layout_height="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="28dp"
+            android:background="@drawable/reser_background_stroke"
             android:src="@drawable/cut"
             app:layout_constraintBottom_toBottomOf="@+id/perm"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/perm"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toTopOf="@+id/perm" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/plusmessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="48dp"
         android:text="추가적으로 전달하고 싶은 메세지"
         android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintHorizontal_bias="0.173"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
         tools:ignore="MissingConstraints" />
@@ -115,11 +117,11 @@
         android:id="@+id/sample_edit"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="334dp"
-        android:layout_height="48dp"
+        android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_marginBottom="20dp"
-        android:hint="반복적인 탈색과 염색의 반복"
-        android:textColorHint="@color/joincolor"
+        app:hintAnimationEnabled="false"
+        app:hintEnabled="false"
         app:layout_constraintBottom_toTopOf="@+id/nextpage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
@@ -130,14 +132,17 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/sample_EditText"
             android:layout_width="324dp"
-            android:layout_height="35dp" />
+            android:layout_height="50dp"
+            android:textSize="15dp"
+            android:hint="반복적인 탈색과 염색의 반복"
+            android:textColorHint="@color/joincolor"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/nextpage"
         android:layout_width="300dp"
         android:layout_height="45dp"
-        android:layout_marginBottom="88dp"
+        android:layout_marginBottom="60dp"
         android:background="@drawable/button_background"
         android:text="다음 단계"
         android:textColor="@color/white"

@@ -10,7 +10,11 @@
         android:id="@+id/homeFragment"
         android:name="kr.ac.kpu.ce2019152012.hairyou_semi.user.fragment.HomeFragment"
         android:label="HomeFragment"
-        tools:layout="@layout/fragment_home"/>
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_customer_ResOneFragment"
+            app:destination="@id/customer_ResOneFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/messageFragment"
@@ -22,4 +26,54 @@
         android:name="kr.ac.kpu.ce2019152012.hairyou_semi.user.fragment.MypageFragment"
         android:label="MypageFragment"
         tools:layout="@layout/fragment_mypage"/>
+    <fragment
+        android:id="@+id/customer_ResFiveFragment"
+        android:name="kr.ac.kpu.ce2019152012.hair_you.user.fragment.ui.Customer_ResFiveFragment"
+        android:label="Customer_ResFiveFragment" >
+        <action
+            android:id="@+id/action_customer_ResFiveFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:launchSingleTop="true"/>
+        <argument
+            android:name="argsString"
+            app:argType="string"
+            android:defaultValue=""/>
+    </fragment>
+    <fragment
+        android:id="@+id/customer_ResFourFragment"
+        android:name="kr.ac.kpu.ce2019152012.hair_you.user.fragment.ui.Customer_ResFourFragment"
+        android:label="Customer_ResFourFragment" >
+        <action
+            android:id="@+id/action_customer_ResFourFragment_to_customer_ResFiveFragment"
+            app:destination="@id/customer_ResFiveFragment"
+            app:launchSingleTop="true"/>
+        <argument
+            android:name="argsString"
+            app:argType="string"
+            android:defaultValue=""/>
+    </fragment>
+    <fragment
+        android:id="@+id/customer_ResOneFragment"
+        android:name="kr.ac.kpu.ce2019152012.hair_you.user.fragment.ui.Customer_ResOneFragment"
+        android:label="Customer_ResOneFragment">
+        <action
+            android:id="@+id/action_customer_ResOneFragment_to_customer_ResTwoFragment"
+            app:destination="@id/customer_ResTwoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/customer_ResTwoFragment"
+        android:name="kr.ac.kpu.ce2019152012.hair_you.user.fragment.ui.Customer_ResTwoFragment"
+        android:label="Customer_ResTwoFragment" >
+        <action
+            android:id="@+id/action_customer_ResTwoFragment_to_customer_ResThreeFragment"
+            app:destination="@id/customer_ResThreeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/customer_ResThreeFragment"
+        android:name="kr.ac.kpu.ce2019152012.hair_you.user.fragment.ui.Customer_ResThreeFragment"
+        android:label="Customer_ResThreeFragment" >
+        <action
+            android:id="@+id/action_customer_ResThreeFragment_to_customer_ResFourFragment"
+            app:destination="@id/customer_ResFourFragment" />
+    </fragment>
 </navigation>
