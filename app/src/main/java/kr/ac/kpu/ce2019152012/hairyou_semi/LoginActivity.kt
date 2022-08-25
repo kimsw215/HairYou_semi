@@ -69,7 +69,11 @@ class LoginActivity : AppCompatActivity() {
                         Toast.makeText(this, "로그인에 성공하였습니다.", Toast.LENGTH_SHORT).show()
                         val user = auth?.currentUser
                         updateUI(user)
-                        if (binding.editId.text.toString().trim() in CustomerList) {
+                        val intent = Intent(this, CustomerContainerActivity::class.java)
+                        intent.putExtra("userId", binding.editId.text.toString())
+                        startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                        finish()
+  /*                      if (binding.editId.text.toString().trim() in CustomerList) {
                             val intent = Intent(this, CustomerContainerActivity::class.java)
                             intent.putExtra("userId", binding.editId.text.toString())
                             startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
@@ -77,7 +81,7 @@ class LoginActivity : AppCompatActivity() {
                         }
                         else {
                             Log.w(TAG, "Error getting documents ")
-                        }
+                        }*/
                     } else {
                         Toast.makeText(this, "로그인에 실패하였습니다.", Toast.LENGTH_SHORT).show()
                         updateUI(null)
