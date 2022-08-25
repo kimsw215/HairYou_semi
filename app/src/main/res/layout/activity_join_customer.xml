@@ -129,7 +129,7 @@
                     android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:layout_marginRight="30dp"
-                    android:background="@drawable/button_background_white_stroke"
+                    android:background="@drawable/reser4_background_stroke"
                     android:text="남자"
                     android:textColor="@color/joincolor" />
 
@@ -137,7 +137,7 @@
                     android:id="@+id/join_select_girl"
                     android:layout_width="100dp"
                     android:layout_height="50dp"
-                    android:background="@drawable/button_background_white_stroke"
+                    android:background="@drawable/reser4_background_stroke"
                     android:text="여자"
                     android:textColor="@color/joincolor" />
             </LinearLayout>
