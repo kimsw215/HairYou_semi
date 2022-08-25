@@ -39,7 +39,6 @@ class JoinCustomerActivity : AppCompatActivity() {
 
         // 회원가입 버튼 누르면 서버로 Call
         binding.joinInBtn.setOnClickListener {
-            val gender = if (binding.joinSelectMan.isSelected()) "male" else "female"
 
             val email = binding.joinIdEdit.text.toString().trim()
             val password = binding.joinPwEdit.text.toString().trim()

@@ -59,9 +59,7 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         val myLocation = com.google.android.gms.maps.model.LatLng(37.3401906, 126.7335293)
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(myLocation))
-        googleMap.moveCamera(CameraUpdateFactory.zoomTo(15f))
-
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(myLocation,15f))
         // 마커 출력
         val marker = MarkerOptions().position(myLocation)
             .title("한국공학대학교")

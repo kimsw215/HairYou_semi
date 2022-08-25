@@ -107,40 +107,6 @@
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="15dp"
-                android:text="성별"
-                android:textColor="@color/joincolor"
-                android:textSize="20dp" />
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/join_select_man"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
-                    android:layout_marginRight="30dp"
-                    android:background="@drawable/reser4_background_stroke"
-                    android:text="남자"
-                    android:textColor="@color/joincolor" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/join_select_girl"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
-                    android:background="@drawable/reser4_background_stroke"
-                    android:text="여자"
-                    android:textColor="@color/joincolor" />
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
