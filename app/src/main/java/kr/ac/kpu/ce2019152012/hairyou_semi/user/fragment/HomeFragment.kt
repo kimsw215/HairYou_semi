@@ -4,17 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.MapView
 import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.MarkerOptions
 import kr.ac.kpu.ce2019152012.hairyou_semi.R
-
 import kr.ac.kpu.ce2019152012.hairyou_semi.databinding.FragmentHomeBinding
+
 
 class HomeFragment : Fragment(), OnMapReadyCallback {
 
@@ -33,8 +32,10 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
     ): View? {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
-
-        binding.map.getMapAsync(this)
+        val mapFragment = childFragmentManager
+            .findFragmentById(kr.ac.kpu.ce2019152012.hairyou_semi.R.id.map) as SupportMapFragment
+        mapFragment.getMapAsync(this)
+        //binding.map.getMapAsync(this)
         return view
     }
 
@@ -42,7 +43,7 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
         super.onViewCreated(view, savedInstanceState)
 
         binding.c1.setOnClickListener {
-            view.findNavController().navigate(R.id.action_homeFragment_to_customer_ResOneFragment)
+            view.findNavController().navigate(kr.ac.kpu.ce2019152012.hairyou_semi.R.id.action_homeFragment_to_customer_ResOneFragment)
         }
     }
 

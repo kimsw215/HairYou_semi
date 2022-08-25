@@ -35,8 +35,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:orientation="vertical"
-            android:gravity="right">
+            android:gravity="right"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/customer_mypage_name"
@@ -52,7 +52,37 @@
                 android:text="전화번호: "
                 android:textSize="20dp" />
         </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="220dp"
+            android:layout_height="71dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:layout_editor_absoluteY="125dp">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="홍 길 동"
+                android:textSize="20dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="5dp"
+                tools:layout_editor_absoluteY="6dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="010-1111-2222"
+                android:textSize="20dp"
+                app:layout_constraintTop_toBottomOf="@+id/textView5"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="5dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
+
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/mypage_reservation_check"
@@ -102,9 +132,9 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="76dp"
         android:layout_marginBottom="56dp"
+        android:background="@drawable/button_background"
         android:text="이메일 로그아웃"
         android:textColor="@color/white"
-        android:background="@drawable/button_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

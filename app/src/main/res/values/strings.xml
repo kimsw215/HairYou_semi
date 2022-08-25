@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HairYou_semi</string>
+    <string name="app_name">HairYou</string>
     <string name="naver_client_key">rilx0glitd</string>
-    <string name="google_map_key">AIzaSyCaVPb2NxkHKZ6p8WElKzMzQCKOV1Z-0ow</string>
+    <string name="google_map_key">secret</string>
 </resources>

@@ -34,8 +34,8 @@
         android:id="@+id/select_date_dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
         android:layout_marginLeft="30dp"
+        android:layout_marginTop="40dp"
         android:datePickerMode="spinner"
         android:spinnersShown="false"
         app:layout_constraintEnd_toEndOf="@+id/shop_name"
@@ -142,16 +142,15 @@
         android:id="@+id/nextpage"
         android:layout_width="300dp"
         android:layout_height="45dp"
-        android:layout_marginBottom="60dp"
         android:background="@drawable/button_background"
         android:text="다음 단계"
         android:textColor="@color/white"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/select_time_tp"
+        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintStart_toStartOf="@+id/select_time_tp"
         app:layout_constraintTop_toBottomOf="@+id/select_time_tp"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.289" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
