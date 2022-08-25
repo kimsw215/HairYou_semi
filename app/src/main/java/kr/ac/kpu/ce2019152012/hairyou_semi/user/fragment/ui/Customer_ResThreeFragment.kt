@@ -40,7 +40,7 @@ class Customer_ResThreeFragment : Fragment() {
         binding.perm.setOnClickListener {
             binding.perm.isSelected = binding.perm.isSelected != true
             binding.color.isSelected = false
-            binding.perm.isSelected = false
+            binding.cut.isSelected = false
         }
 
         binding.cut.setOnClickListener {

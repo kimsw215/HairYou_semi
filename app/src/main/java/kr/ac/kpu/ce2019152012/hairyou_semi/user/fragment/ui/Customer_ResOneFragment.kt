@@ -48,7 +48,7 @@ class Customer_ResOneFragment : Fragment() {
 
         binding.bangopseul.setOnClickListener {
             binding.bangopseul.isSelected = binding.bangopseul.isSelected != true
-            binding.bangopseul.isSelected = false
+            binding.straight.isSelected = false
             binding.gopseul.isSelected = false
         }
 
